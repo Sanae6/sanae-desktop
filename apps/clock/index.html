@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Clock</title>
+        <link href="dist/css/dyclock.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>fortnite</h1>
+        <div id="analog-clock" class="dyclock-container"></div>
+        <script src="dist/js/dyclock.min.js"></script>
+        <script>
+            var clockObj = new dyClock("#analog-clock", {clock:"analog"});
+            clockObj.start()
+        </script>
+    </body>
+</html>

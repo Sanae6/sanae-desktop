@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/tiles.js"></script>
+    </head>
+    <body>
+        <div id="tiles">
+        </div>
+        <input type="text" id="aids"><p id="umm"></p>
+        <input type="button" value="Add new window" onclick="at()"/>
+        <script src="js/index.js"></script>
+        <script>
+            var path = require("path");
+            var fs = require("fs");
+            var appath;
+            dir(__dirname).then((info)=>info.getApplicationPath().then((ap)=>appath = ap));
+            var aids = document.getElementById("aids");
+            var lbl = document.getElementById("umm");
+            setTimeout(()=>apps.addTile("clock"),3000);
+            function at(){
+                var appid = aids.value;
+                if (!fs.existsSync(path.join(appath,"..","apps",appid))){
+                    lbl.textContent = "App with inserted id \""+appid+"\" does not exist";
+                } else {
+                    lbl.textContent = "App named \""+appid+"\" has been opened"
+                    apps.addTile(appid);
+                }
+                aids.value = "";
+            }
+        </script>
+    </body>
+</html>
